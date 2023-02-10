@@ -6,7 +6,7 @@
 /*   By: msamhaou <msamhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 20:37:20 by msamhaou          #+#    #+#             */
-/*   Updated: 2023/02/09 20:45:45 by msamhaou         ###   ########.fr       */
+/*   Updated: 2023/02/10 05:18:44 by msamhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PUSH_SWAP_BONUS_H
 # include <unistd.h>
 # include <stdlib.h>
-# include "../libft/libft.h"
+# include "libft.h"
 # include "get_next_line.h"
 
 t_list	*ft_init(char **av);

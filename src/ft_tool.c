@@ -6,7 +6,7 @@
 /*   By: msamhaou <msamhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 11:26:05 by msamhaou          #+#    #+#             */
-/*   Updated: 2023/02/08 16:13:53 by msamhaou         ###   ########.fr       */
+/*   Updated: 2023/02/10 18:14:02 by msamhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,15 @@ int	ft_find_minmv(t_list	*lst)
 		lst = lst->next;
 	}
 	return (res);
+}
+
+t_list	*ft_findbest(t_list *lst)
+{
+	while (lst)
+	{
+		if (lst->bestmv == ft_find_minmv(lst))
+			return (lst);
+		lst = lst->next;
+	}
+	return (lst);
 }

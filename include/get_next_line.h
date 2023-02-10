@@ -6,7 +6,7 @@
 /*   By: msamhaou <msamhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 15:31:41 by msamhaou          #+#    #+#             */
-/*   Updated: 2023/02/10 02:49:49 by msamhaou         ###   ########.fr       */
+/*   Updated: 2023/02/10 05:29:51 by msamhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <fcntl.h>
 # include <stdio.h>
 # include <limits.h>
-# include "../libft/libft.h"
+# include "libft.h"
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 2

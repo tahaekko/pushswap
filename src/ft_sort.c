@@ -6,13 +6,13 @@
 /*   By: msamhaou <msamhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 01:52:48 by msamhaou          #+#    #+#             */
-/*   Updated: 2023/02/09 20:40:17 by msamhaou         ###   ########.fr       */
+/*   Updated: 2023/02/10 18:13:57 by msamhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_sort_small(t_list **a)
+static void	ft_sort_small(t_list **a)
 {
 	int	max;
 
@@ -28,7 +28,18 @@ void	ft_sort_small(t_list **a)
 	}
 }
 
-void	ft_push_to_b(t_list **a, t_list **b)
+static t_list	*ft_point_to_val(t_list *lst, int index)
+{
+	while (lst)
+	{
+		if (lst->index == index)
+			return (lst);
+		lst = lst->next;
+	}
+	return (lst);
+}
+
+static void	ft_push_to_b(t_list **a, t_list **b)
 {
 	int	med;
 
@@ -42,17 +53,6 @@ void	ft_push_to_b(t_list **a, t_list **b)
 		if (!ft_less_isearch(*a, med))
 			med = (ft_getmax_index(*a) + ft_getmin_index(*a)) / 2;
 	}
-}
-
-t_list	*ft_findbest(t_list *lst)
-{
-	while (lst)
-	{
-		if (lst->bestmv == ft_find_minmv(lst))
-			return (lst);
-		lst = lst->next;
-	}
-	return (lst);
 }
 
 void	ft_push_back(t_list **a, t_list **b)
@@ -85,9 +85,21 @@ void	ft_push_back(t_list **a, t_list **b)
 
 void	ft_sort_big(t_list **a, t_list	**b)
 {
+	int	max;
+	int	size;
+
 	ft_push_to_b(a, b);
 	ft_sort_small(a);
 	ft_push_back(a, b);
+	ft_setpos(*a);
+	max = ft_getmax_index(*a);
+	size = ft_lstsize(*a);
 	while (!ft_sorted(*a))
-		ft_rra(a);
+	{
+		ft_setpos(*a);
+		if (ft_point_to_val(*a, max)->pos < size / 2)
+			ft_ra(a);
+		else
+			ft_rra(a);
+	}
 }
