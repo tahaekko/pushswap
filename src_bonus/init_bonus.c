@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_bonus.c                                       :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msamhaou <msamhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 03:14:29 by msamhaou          #+#    #+#             */
-/*   Updated: 2023/02/10 04:11:55 by msamhaou         ###   ########.fr       */
+/*   Updated: 2023/02/11 22:09:54 by msamhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,21 @@ static int	ft_check_double(t_list *a)
 	}
 	return (0);
 }
+
+int	ft_onlysp(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] != ' ')
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
 
 static int	ft_isspace(char *s)
 {
@@ -102,6 +117,11 @@ t_list	*ft_init(char **av)
 	i = 1;
 	while (av[i])
 	{
+		if (ft_onlysp(av[i]))
+		{
+			ft_putendl_fd("Error", 1);
+			exit(1);
+		}
 		if (ft_isspace(av[i]))
 			ft_arg_split(&a, av[i]);
 		else

@@ -1,4 +1,4 @@
-# **************************************************************************** #
+	# **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
@@ -6,7 +6,7 @@
 #    By: msamhaou <msamhaou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/05 01:49:18 by msamhaou          #+#    #+#              #
-#    Updated: 2023/02/10 18:22:58 by msamhaou         ###   ########.fr        #
+#    Updated: 2023/02/10 18:34:54 by msamhaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,6 @@ FLAGS =		-Wall -Wextra -Werror
 LIBFT_DIR = libft/
 
 INCLUDE =	include
-
-HEADERS = push_swap.h	get_next_line.h
 
 #------------SRC && OBJ-------------#
 SRC_DIR =	src/
@@ -67,10 +65,10 @@ all : $(NAME)
 $(NAME) : $(LIB_OBJ) $(OBJ_DIR) $(OBJ)
 	$(CC) $(FLAGS) $(OBJ) $(LIB_OBJ) -o $(NAME)
 
-#---------LIBFT--------#
+
 $(LIBFT_DIR)%.o : $(LIBFT_DIR)%.c include/libft.h
 	$(CC) $(FLAGS) -c $< -o $@ -I $(INCLUDE)
-#------------------------#
+
 
 $(OBJ_DIR)%.o : $(SRC_DIR)%.c include/push_swap.h
 	$(CC) -c $(FLAGS) $< -o $@ -I $(INCLUDE)

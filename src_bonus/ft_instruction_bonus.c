@@ -6,7 +6,7 @@
 /*   By: msamhaou <msamhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 03:22:37 by msamhaou          #+#    #+#             */
-/*   Updated: 2023/02/09 20:42:58 by msamhaou         ###   ########.fr       */
+/*   Updated: 2023/02/12 19:46:39 by msamhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	swap(t_list **lst)
 	t_list	*tmp;
 	t_list	*tmp2;
 
+	if (!(*lst))
+		return ;
 	tmp = *lst;
 	tmp2 = (*lst)->next;
 	(*lst)->next = (*lst)->next->next;
@@ -34,6 +36,8 @@ void	rotate(t_list **lst)
 {
 	t_list	*tmp;
 
+	if (!(*lst))
+		return ;
 	tmp = (*lst)->next;
 	ft_lstlast(*lst)->next = *lst;
 	(*lst)->next = NULL;
@@ -44,6 +48,8 @@ void	rev_rotate(t_list **lst)
 {
 	t_list	*tmp;
 
+	if (!(*lst))
+		return ;
 	tmp = *lst;
 	*lst = ft_lstlast(*lst);
 	ft_seclast(tmp)->next = NULL;

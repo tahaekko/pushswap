@@ -6,7 +6,7 @@
 /*   By: msamhaou <msamhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 22:51:42 by msamhaou          #+#    #+#             */
-/*   Updated: 2023/02/09 20:03:59 by msamhaou         ###   ########.fr       */
+/*   Updated: 2023/02/10 22:20:38 by msamhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ int	main(int ac, char **av)
 	a = NULL;
 	b = NULL;
 	a = ft_init(av);
+	if (ft_sorted(a))
+		exit(0);
 	set_index(a);
 	ft_setpos(a);
 	ft_sort_big(&a, &b);

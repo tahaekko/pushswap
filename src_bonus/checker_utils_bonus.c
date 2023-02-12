@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_utils.c                                    :+:      :+:    :+:   */
+/*   checker_utils_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msamhaou <msamhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 20:41:00 by msamhaou          #+#    #+#             */
-/*   Updated: 2023/02/09 20:42:39 by msamhaou         ###   ########.fr       */
+/*   Updated: 2023/02/11 22:49:11 by msamhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,26 @@ int	ft_strdiff(char *str, char	*str2)
 
 void	ft_rotate_both(t_list **a, t_list **b)
 {
-	rotate(a);
-	rotate(b);
+	if (!(*b))
+		rotate(a);
+	else if (!(*a))
+		rotate(b);
+	else
+	{
+		rotate(a);
+		rotate(b);
+	}
 }
 
 void	ft_rev_rotate_both(t_list **a, t_list **b)
 {
-	rev_rotate(a);
-	rev_rotate(b);
+	if (!(*b))
+		rev_rotate(a);
+	else if (!(*a))
+		rev_rotate(b);
+	else
+	{
+		rev_rotate(a);
+		rev_rotate(b);
+	}
 }

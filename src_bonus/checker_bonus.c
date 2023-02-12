@@ -6,7 +6,7 @@
 /*   By: msamhaou <msamhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 16:12:17 by msamhaou          #+#    #+#             */
-/*   Updated: 2023/02/09 20:42:27 by msamhaou         ###   ########.fr       */
+/*   Updated: 2023/02/12 19:44:22 by msamhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,15 @@
 
 void	ft_swap_both(t_list **a, t_list **b)
 {
-	swap(a);
-	swap(b);
+	if (!(*b))
+		swap(a);
+	else if (!(*a))
+		swap(b);
+	else
+	{
+		swap(a);
+		swap(b);
+	}
 }
 
 int	ft_instr(char *str, t_list **a, t_list **b)
@@ -52,6 +59,7 @@ int	ft_more(char *str, t_list **a, t_list **b)
 		ft_putendl_fd("Error", 1);
 		exit(1);
 	}
+	return (0);
 }
 
 int	main(int ac, char **av)
@@ -67,10 +75,14 @@ int	main(int ac, char **av)
 	line = NULL;
 	a = ft_init(av);
 	while ((get_next_line(0, &line)))
+	{
 		if (!ft_instr(line, &a, &b))
 			ft_more(line, &a, &b);
+		free(line);
+	}
 	if (ft_sorted(a))
 		ft_putendl_fd("OK", 1);
 	else
-		ft_putendl_fd("KO", 1);
+		ft_putendl_fd("KO", 1);	
+	ft_lstclear(&a, ft_del);
 }
