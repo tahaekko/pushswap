@@ -6,7 +6,7 @@
 /*   By: msamhaou <msamhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 15:47:14 by msamhaou          #+#    #+#             */
-/*   Updated: 2023/02/10 18:19:28 by msamhaou         ###   ########.fr       */
+/*   Updated: 2023/02/13 01:53:55 by msamhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_convert(size_t *res, int sign, const char *str)
 		if ((*res > 2147483647 && sign == 1)
 			|| (*res > 2147483648 && sign == -1))
 		{
-			ft_putendl_fd ("Error", 1);
+			ft_putendl_fd ("Error", 2);
 			exit(1);
 		}
 		str++;

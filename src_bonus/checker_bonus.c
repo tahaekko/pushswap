@@ -6,7 +6,7 @@
 /*   By: msamhaou <msamhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 16:12:17 by msamhaou          #+#    #+#             */
-/*   Updated: 2023/02/12 19:44:22 by msamhaou         ###   ########.fr       */
+/*   Updated: 2023/02/13 00:34:57 by msamhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	ft_more(char *str, t_list **a, t_list **b)
 		return (push(a, b), 1);
 	else
 	{
-		ft_putendl_fd("Error", 1);
+		ft_putendl_fd("Error", 2);
 		exit(1);
 	}
 	return (0);

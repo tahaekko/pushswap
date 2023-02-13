@@ -6,7 +6,7 @@
 /*   By: msamhaou <msamhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 03:14:29 by msamhaou          #+#    #+#             */
-/*   Updated: 2023/02/11 22:09:54 by msamhaou         ###   ########.fr       */
+/*   Updated: 2023/02/13 01:05:17 by msamhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	ft_check_double(t_list *a)
 				break ;
 			if (tmp->val == a->val)
 			{	
-				ft_putendl_fd("Error", 1);
+				ft_putendl_fd("Error", 2);
 				exit(1);
 				return (1);
 			}
@@ -75,16 +75,16 @@ static void	ft_error(char *s)
 	i = 0;
 	if (!s[i])
 	{
-		ft_putendl_fd("Error", 1);
+		ft_putendl_fd("Error", 2);
 		exit(1);
 	}
+	if (s[i] == '-' || s[i] == '+')
+			i++;
 	while (s[i])
 	{
-		if (s[i] == '-' || s[i] == '+')
-			i++;
 		if (!ft_isdigit(s[i]))
 		{
-			ft_putendl_fd("Error", 1);
+			ft_putendl_fd("Error", 2);
 			exit(1);
 		}
 		i++;
@@ -119,7 +119,7 @@ t_list	*ft_init(char **av)
 	{
 		if (ft_onlysp(av[i]))
 		{
-			ft_putendl_fd("Error", 1);
+			ft_putendl_fd("Error", 2);
 			exit(1);
 		}
 		if (ft_isspace(av[i]))
