@@ -6,7 +6,7 @@
 /*   By: msamhaou <msamhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 03:14:29 by msamhaou          #+#    #+#             */
-/*   Updated: 2023/02/13 01:06:29 by msamhaou         ###   ########.fr       */
+/*   Updated: 2023/02/13 02:34:09 by msamhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,21 +51,6 @@ int	ft_onlysp(char *str)
 		i++;
 	}
 	return (1);
-}
-
-
-static int	ft_isspace(char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] == ' ')
-			return (1);
-		i++;
-	}
-	return (0);
 }
 
 static void	ft_error(char *s)

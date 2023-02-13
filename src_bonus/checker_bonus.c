@@ -6,7 +6,7 @@
 /*   By: msamhaou <msamhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 16:12:17 by msamhaou          #+#    #+#             */
-/*   Updated: 2023/02/13 00:34:57 by msamhaou         ###   ########.fr       */
+/*   Updated: 2023/02/13 02:33:37 by msamhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int	main(int ac, char **av)
 	b = NULL;
 	line = NULL;
 	a = ft_init(av);
-	while ((get_next_line(0, &line)))
+	while (get_next_line(0, &line))
 	{
 		if (!ft_instr(line, &a, &b))
 			ft_more(line, &a, &b);
@@ -83,6 +83,6 @@ int	main(int ac, char **av)
 	if (ft_sorted(a))
 		ft_putendl_fd("OK", 1);
 	else
-		ft_putendl_fd("KO", 1);	
+		ft_putendl_fd("KO", 1);
 	ft_lstclear(&a, ft_del);
 }

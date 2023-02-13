@@ -6,7 +6,7 @@
 /*   By: msamhaou <msamhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 20:37:20 by msamhaou          #+#    #+#             */
-/*   Updated: 2023/02/10 05:18:44 by msamhaou         ###   ########.fr       */
+/*   Updated: 2023/02/13 02:35:03 by msamhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ int		ft_sorted(t_list *lst);
 int		ft_strdiff(char *str, char	*str2);
 void	ft_rotate_both(t_list **a, t_list **b);
 void	ft_rev_rotate_both(t_list **a, t_list **b);
+int		ft_isspace(char *s);
 
 #endif

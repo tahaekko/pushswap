@@ -6,7 +6,7 @@
 /*   By: msamhaou <msamhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 20:41:00 by msamhaou          #+#    #+#             */
-/*   Updated: 2023/02/11 22:49:11 by msamhaou         ###   ########.fr       */
+/*   Updated: 2023/02/13 02:34:28 by msamhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,18 @@ void	ft_rev_rotate_both(t_list **a, t_list **b)
 		rev_rotate(a);
 		rev_rotate(b);
 	}
+}
+
+int	ft_isspace(char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == ' ')
+			return (1);
+		i++;
+	}
+	return (0);
 }

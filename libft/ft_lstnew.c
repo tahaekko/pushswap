@@ -6,7 +6,7 @@
 /*   By: msamhaou <msamhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 11:47:18 by msamhaou          #+#    #+#             */
-/*   Updated: 2023/02/06 19:44:23 by msamhaou         ###   ########.fr       */
+/*   Updated: 2023/02/13 02:48:53 by msamhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstnew(int val, int index)
 
 	list = (t_list *)ft_calloc(1, sizeof(t_list));
 	if (!list)
-		return (NULL);
+		exit(1);
 	list->val = val;
 	list->index = index;
 	list->next = NULL;

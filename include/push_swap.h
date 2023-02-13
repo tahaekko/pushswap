@@ -6,7 +6,7 @@
 /*   By: msamhaou <msamhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 20:35:41 by msamhaou          #+#    #+#             */
-/*   Updated: 2023/02/10 18:13:46 by msamhaou         ###   ########.fr       */
+/*   Updated: 2023/02/13 02:32:22 by msamhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,6 @@ t_list	*ft_findbest(t_list *lst);
 void	pushb(t_list **a, t_list **b);
 void	pusha(t_list **a, t_list **b);
 int		ft_find_minmv(t_list *lst);
+int		ft_isspace(char *s);
 
 #endif

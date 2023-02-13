@@ -6,7 +6,7 @@
 /*   By: msamhaou <msamhaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 11:26:05 by msamhaou          #+#    #+#             */
-/*   Updated: 2023/02/10 18:14:02 by msamhaou         ###   ########.fr       */
+/*   Updated: 2023/02/13 02:32:04 by msamhaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,18 @@ t_list	*ft_findbest(t_list *lst)
 		lst = lst->next;
 	}
 	return (lst);
+}
+
+int	ft_isspace(char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == ' ')
+			return (1);
+		i++;
+	}
+	return (0);
 }
